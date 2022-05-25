@@ -1,0 +1,92 @@
+main form input, main form select, main .list-paises .container-pais {
+  -webkit-box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+          box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+
+main form input, main form select, main .list-paises .container-pais {
+  border-radius: .25rem;
+}
+
+main {
+  padding: 2rem 4rem;
+}
+
+main .limit-area-main {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+main form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+  height: 2.8rem;
+}
+
+main form input {
+  background: var(--element);
+  color: var(--text);
+  border: none;
+  max-width: 25rem;
+  height: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+main form input::-webkit-input-placeholder {
+  color: var(--text);
+  opacity: 1;
+}
+
+main form input:-ms-input-placeholder {
+  color: var(--text);
+  opacity: 1;
+}
+
+main form input::-ms-input-placeholder {
+  color: var(--text);
+  opacity: 1;
+}
+
+main form input::placeholder {
+  color: var(--text);
+  opacity: 1;
+}
+
+main form select {
+  background: var(--element);
+  width: 10rem;
+  color: var(--text);
+  border: none;
+  height: 100%;
+}
+
+main .list-paises {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 2rem;
+}
+
+main .list-paises .container-pais {
+  background: var(--element);
+  width: 13rem;
+  height: 18rem;
+}
+
+@media (max-width: 420px) {
+  main {
+    padding: 2rem 1.5rem;
+  }
+}
+/*# sourceMappingURL=main.css.map */

@@ -1,0 +1,73 @@
+%shadow-box {
+   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+}
+%radius-box {
+   border-radius: .25rem;
+}
+
+main {
+   padding: 2rem 4rem;
+
+   .limit-area-main {
+      max-width: 60rem;
+      margin: 0 auto;
+      //@extend %shadow-box;
+   }
+
+   form {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 2rem;
+      height: 2.8rem;
+
+      input {
+         background: var(--element);
+         color: var(--text);
+         border: none;
+         max-width: 25rem;
+         height: 100%;
+         @extend %shadow-box;
+         @extend %radius-box;
+         flex: 1;
+      }
+
+      input::placeholder {
+         color: var(--text);
+         opacity: 1; 
+       }
+      
+
+      select {
+         background: var(--element);
+         width: 10rem;
+         color: var(--text);
+         border: none;
+         height: 100%;
+         @extend %shadow-box;
+         @extend %radius-box;
+      }
+   }
+
+   .list-paises {
+      margin-top: 2rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+
+      .container-pais {
+         background: var(--element);
+         width: 13rem;
+         height: 18rem;
+         @extend %shadow-box;
+         @extend %radius-box;
+      }
+   }
+}
+
+@media (max-width: 420px){
+   main{
+     padding: 2rem 1.5rem;
+     
+   }
+ }

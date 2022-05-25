@@ -1,10 +1,75 @@
 <!DOCTYPE html>
-<html lang="pt">
+<html lang="en">
    <head>
       <meta charset="UTF-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+      <!-- Fonts -->
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+      <link
+         href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap"
+         rel="stylesheet"
+      />
+
+      <!-- Icons -->
+      <link rel="stylesheet" href="assets/style.css" />
+
+      <!-- Styles -->
+      <link rel="stylesheet" href="/src/styles/colors/color.css" />
+      <link rel="stylesheet" href="/src/styles/main/main.css" />
+      <link rel="stylesheet" href="/src/styles/header/header.css" />
+      <link rel="stylesheet" href="/src/styles/global/global.css" />
+
       <title>API Países</title>
    </head>
-   <body></body>
+   <body>
+      <header>
+         <div class="limit-area-header">
+            <h1>Where in the world?</h1>
+            <div id="modeDark">
+               <i class="icon-brightness-contrast"> </i>
+               <p>Dark Mode</p>
+            </div>
+         </div>
+      </header>
+
+      <main>
+         <div class="limit-area-main">
+            <section class="form">
+               <form>
+                  <label class="sr-only" for="inputSeachCountry"
+                     >Search for a country</label
+                  >
+                  <input
+                     type="text"
+                     id="inputSeachCountry"
+                     placeholder="Search for a country..."
+                  />
+                  <label class="sr-only" for="selectRegion"
+                     >Filter by Region</label
+                  >
+                  <select name="regions" id="selectRegion">
+                     <option value="" disabled selected>
+                        Filtering by Region
+                     </option>
+                  </select>
+               </form>
+            </section>
+
+            <section class="list-paises">
+               <div class="container-pais"></div>
+               <div class="container-pais"></div>
+               <div class="container-pais"></div>
+               <div class="container-pais"></div>
+               <div class="container-pais"></div>
+               <div class="container-pais"></div>
+               <div class="container-pais"></div>
+            </section>
+         </div>
+      </main>
+
+      <script src="/src/js/main.js"></script>
+   </body>
 </html>
