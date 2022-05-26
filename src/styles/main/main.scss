@@ -76,9 +76,12 @@ main {
          background: var(--element);
          border-radius: $radius-box;
          @extend %shadow-box;
+         display: flex;
+         flex-direction: column;
          cursor: pointer;
 
          .flag {
+            flex: 1;
             img {
                width: 100%;
                border-radius: $radius-box $radius-box 0 0;
