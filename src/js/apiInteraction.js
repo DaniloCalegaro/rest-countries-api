@@ -12,9 +12,10 @@ async function fetchCountries() {
    try {
       const countries = await axios.get(urlFilterd)
       //console.log(countries.data)
-      createConntainersCountries(countries.data)
+      createContainersCountries(countries.data)
    } catch (e) {
       console.error(e)
+      createMessageFail('Failed to load data')
    }
 }
 
@@ -26,9 +27,9 @@ function newElement(name, className, type) {
    return name
 }
 
-function createConntainersCountries(data) {
-   const sectionListCountries = document.querySelector('.list-countries')
+const sectionListCountries = document.querySelector('.list-countries')
 
+function createContainersCountries(data) {
    data.forEach(country => {
       const countryCreate = newElement(
          'countryCreate',
@@ -97,4 +98,10 @@ function createConntainersCountries(data) {
    })
 }
 
-fetchCountries()
+function createMessageFail(data) {
+   const pNotify = newElement('pNotify', '', 'p')
+   pNotify.textContent = data
+   sectionListCountries.append(pNotify)
+}
+
+// fetchCountries()

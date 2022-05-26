@@ -142,6 +142,46 @@ main .list-countries .container-country .info-country ul li:first-child {
   font-weight: 800;
 }
 
+main .modal-wait {
+  text-align: center;
+  color: var(--text);
+}
+
+main .modal-wait .icon-animate-rotate {
+  -webkit-animation: rotate-center 1s linear infinite;
+          animation: rotate-center 1s linear infinite;
+}
+
+main .modal-wait .icon-animate-rotate i {
+  font-size: 2rem;
+}
+
+main .modal-wait p {
+  margin-top: 1rem;
+}
+
+@-webkit-keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-center {
+  0% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 /* Media queries */
 @media (min-width: 375px) {
   main {

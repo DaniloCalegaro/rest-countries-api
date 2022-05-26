@@ -111,7 +111,37 @@ main {
          }
       }
    }
+
+   .modal-wait {
+      //background: rgba(0, 0, 0, 0.15);
+      // display: flex;
+      // justify-content: center;
+      text-align: center;
+      color: var(--text);
+      
+      .icon-animate-rotate {
+         animation: rotate-center 1s linear infinite;   
+         i {
+            font-size: 2rem;
+         }
+      }
+
+      p{
+         margin-top:1rem
+      }
+
+      
+   }
 }
+
+@keyframes rotate-center {
+   0% {
+     transform: rotate(0);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
+ }
 
 /* Media queries */
 @media (min-width: 375px){
