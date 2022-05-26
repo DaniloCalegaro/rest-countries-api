@@ -72,7 +72,7 @@ main {
       display: grid;
       gap: 2rem;
 
-      .container-countrie {
+      .container-country {
          background: var(--element);
          border-radius: $radius-box;
          @extend %shadow-box;
