@@ -49,25 +49,62 @@ main {
       }
    }
 
-   .list-paises {
+   .list-countries {
       margin-top: 2rem;
-      display: flex;
-      flex-wrap: wrap;
+      display: grid;
+      //grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
 
-      .container-pais {
+      .container-countrie {
          background: var(--element);
-         width: 13rem;
+         min-width: 25%;
+         // min-width: 13rem;
+         //width: 15%;
+         //flex: 0 0 13rem;
+         //max-width: 15rem;
+         //flex-grow: 1;
+         //flex-basis: 13rem;
          height: 18rem;
          @extend %shadow-box;
          @extend %radius-box;
       }
+      
+      
    }
 }
 
-@media (max-width: 420px){
+
+/* Media queries */
+@media (min-width: 375px){
    main{
      padding: 2rem 1.5rem;
-     
+
+     .list-countries {
+      grid-template-columns: 1fr;
+    }
    }
  }
+
+@media (min-width: 640px) {
+   main {
+      .list-countries {
+        grid-template-columns: repeat(2, 1fr);
+      }
+   }
+ }
+ 
+@media (min-width: 992px) {
+   main {
+      .list-countries {
+        grid-template-columns: repeat(3, 1fr);
+      }
+   }
+ }
+ 
+@media (min-width: 1366px) {
+   main {
+      .list-countries {
+        grid-template-columns: repeat(4, 1fr);
+      }
+   }
+}
