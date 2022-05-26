@@ -1,78 +1,114 @@
+/*--- Extends ---*/
 %shadow-box {
    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
 }
-%radius-box {
-   border-radius: .25rem;
-}
+
+/*--- Variables ---*/
+$radius-box: .25rem;
 
 main {
-   padding: 2rem 4rem;
-
-   .limit-area-main {
-      max-width: 60rem;
-      margin: 0 auto;
-      //@extend %shadow-box;
-   }
+   padding: 2rem 1.5rem;
 
    form {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 2rem;
-      height: 2.8rem;
+      //height: 2.8rem;
 
-      input {
-         background: var(--element);
-         color: var(--text);
-         border: none;
+      .container-words-search {
          max-width: 25rem;
-         height: 100%;
-         @extend %shadow-box;
-         @extend %radius-box;
+         min-width: 10rem;
          flex: 1;
+         position: relative;
+
+         input {
+            background: var(--element);
+            color: var(--text);
+            width: 100%;
+            border: none;
+            
+            height: 2.8rem;
+            padding: 0 .8rem 0 2.5rem;
+            border-radius: $radius-box;
+            @extend %shadow-box;
+            
+            
+         }
+   
+         input::placeholder {
+            color: var(--text);
+            opacity: 1; 
+          }
+         
+         .icon-search {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            margin-left: 1rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+         }
       }
 
-      input::placeholder {
-         color: var(--text);
-         opacity: 1; 
-       }
-      
 
       select {
          background: var(--element);
          width: 10rem;
          color: var(--text);
          border: none;
-         height: 100%;
+         height: 2.8rem;
+         padding: 0 .8rem;
+         border-radius: $radius-box;
          @extend %shadow-box;
-         @extend %radius-box;
+         cursor: pointer;
       }
    }
 
    .list-countries {
       margin-top: 2rem;
       display: grid;
-      //grid-template-columns: repeat(4, 1fr);
       gap: 2rem;
 
       .container-countrie {
          background: var(--element);
-         min-width: 25%;
-         // min-width: 13rem;
-         //width: 15%;
-         //flex: 0 0 13rem;
-         //max-width: 15rem;
-         //flex-grow: 1;
-         //flex-basis: 13rem;
-         height: 18rem;
+         border-radius: $radius-box;
          @extend %shadow-box;
-         @extend %radius-box;
+         cursor: pointer;
+
+         .flag {
+            img {
+               width: 100%;
+               border-radius: $radius-box $radius-box 0 0;
+            }
+         }
+
+         .info-country {
+            padding: 1rem;
+
+            ul {
+               color: var(--text);
+               li{
+                  display: flex;
+                  font-weight: 600;
+
+                  span {
+                     margin-left: .5rem;
+                     font-weight: 300;
+                  }
+               }
+
+               li:first-child {
+                  font-size: 1.2rem;
+                  font-weight: 800;
+               }
+            }
+         }
       }
-      
-      
    }
 }
-
 
 /* Media queries */
 @media (min-width: 375px){
@@ -87,6 +123,8 @@ main {
 
 @media (min-width: 640px) {
    main {
+      padding: 2rem 4rem;
+
       .list-countries {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -95,6 +133,8 @@ main {
  
 @media (min-width: 992px) {
    main {
+      padding: 2rem 4rem;
+
       .list-countries {
         grid-template-columns: repeat(3, 1fr);
       }

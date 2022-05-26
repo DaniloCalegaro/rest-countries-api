@@ -7,9 +7,7 @@ header {
   z-index: 10;
 }
 
-header .limit-area-header {
-  max-width: 60rem;
-  margin: 0 auto;
+header .header-elements {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -22,13 +20,13 @@ header .limit-area-header {
   padding: 1.2rem 0;
 }
 
-header .limit-area-header h1 {
+header .header-elements h1 {
   color: var(--text);
   font-weight: 800;
   font-size: 1.3rem;
 }
 
-header .limit-area-header div {
+header .header-elements div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -36,15 +34,16 @@ header .limit-area-header div {
       -ms-flex-align: center;
           align-items: center;
   gap: .5rem;
+  cursor: pointer;
 }
 
-header .limit-area-header div p {
+header .header-elements div p {
   color: var(--text);
   font-weight: 600;
   font-size: .9rem;
 }
 
-header .limit-area-header div i {
+header .header-elements div i {
   color: var(--text);
 }
 
