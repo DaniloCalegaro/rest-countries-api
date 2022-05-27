@@ -114,11 +114,17 @@ main {
 
    .modal-wait {
       //background: rgba(0, 0, 0, 0.15);
-      // display: flex;
-      // justify-content: center;
       text-align: center;
       color: var(--text);
-      
+
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+
+      visibility: hidden;
+      opacity: 0;
+
       .icon-animate-rotate {
          animation: rotate-center 1s linear infinite;   
          i {
@@ -129,8 +135,11 @@ main {
       p{
          margin-top:1rem
       }
+   }
 
-      
+   .modal-wait.show {
+      visibility: visible;
+      opacity: 1;
    }
 }
 

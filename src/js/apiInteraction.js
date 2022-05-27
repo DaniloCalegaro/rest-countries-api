@@ -7,15 +7,17 @@ const urlFilterd =
 //    .get(urlFilterd)
 //    .then(response => console.log(response.data))
 //    .catch(error => console.error(error))
-
 async function fetchCountries() {
+   viewModalLoading(true)
    try {
       const countries = await axios.get(urlFilterd)
       //console.log(countries.data)
+      viewModalLoading(false)
       createContainersCountries(countries.data)
    } catch (e) {
       console.error(e)
-      createMessageFail('Failed to load data')
+      viewModalLoading(false)
+      createMessageClient('Failed to load data')
    }
 }
 
@@ -98,10 +100,19 @@ function createContainersCountries(data) {
    })
 }
 
-function createMessageFail(data) {
+function createMessageClient(data) {
    const pNotify = newElement('pNotify', '', 'p')
    pNotify.textContent = data
    sectionListCountries.append(pNotify)
 }
 
-// fetchCountries()
+function viewModalLoading(view) {
+   const modalWait = document.querySelector('.modal-wait')
+   if (view === true) {
+      modalWait.classList.add('show')
+   } else {
+      modalWait.classList.remove('show')
+   }
+}
+
+fetchCountries()
