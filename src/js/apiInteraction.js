@@ -160,7 +160,7 @@ function viewModalLoading(view) {
 
 selectRegion.addEventListener('change', event => {
    const region = event.target.value
-   //console.log(region)
+   inputSeachCountry.value = ''
    if (region === 'All') {
       fetchCountries()
    } else {
