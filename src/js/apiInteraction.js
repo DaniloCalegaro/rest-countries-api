@@ -1,23 +1,51 @@
-//const axios = require('axios').default
+const url =
+   'https://restcountries.com/v3.1/all?fields=name,flags,population,region,capital'
 
-const urlFilterd =
-   'https://restcountries.com/v2/all?fields=name,flags,population,region,capital'
+const urlFilterdRegions = 'https://restcountries.com/v3.1/region/'
+const urlFilterName = 'https://restcountries.com/v3.1/name/'
 
-// axios
-//    .get(urlFilterd)
-//    .then(response => console.log(response.data))
-//    .catch(error => console.error(error))
+const sectionListCountries = document.querySelector('.list-countries')
+
 async function fetchCountries() {
+   sectionListCountries.innerHTML = ''
    viewModalLoading(true)
    try {
-      const countries = await axios.get(urlFilterd)
-      //console.log(countries.data)
+      const countries = await axios.get(url)
       viewModalLoading(false)
+      createOptionSelect(countries.data)
       createContainersCountries(countries.data)
    } catch (e) {
       console.error(e)
       viewModalLoading(false)
       createMessageClient('Failed to load data')
+   }
+}
+
+async function fetchCountriesOfRegions(region) {
+   sectionListCountries.innerHTML = ''
+   viewModalLoading(true)
+   try {
+      const countries = await axios.get(urlFilterdRegions + region)
+      viewModalLoading(false)
+      createContainersCountries(countries.data)
+   } catch (e) {
+      //console.error(e)
+      viewModalLoading(false)
+      createMessageClient('Country not found!')
+   }
+}
+
+async function fetchSearchCountry(country) {
+   sectionListCountries.innerHTML = ''
+   viewModalLoading(true)
+   try {
+      const countries = await axios.get(urlFilterName + country)
+      viewModalLoading(false)
+      createContainersCountries(countries.data)
+   } catch (e) {
+      //console.error(e)
+      viewModalLoading(false)
+      createMessageClient('Country not found!')
    }
 }
 
@@ -28,8 +56,6 @@ function newElement(name, className, type) {
    }
    return name
 }
-
-const sectionListCountries = document.querySelector('.list-countries')
 
 function createContainersCountries(data) {
    data.forEach(country => {
@@ -50,7 +76,7 @@ function createContainersCountries(data) {
       //---
       const rowInfoCountry = newElement('rowInfoCountry', '', 'li')
       const pNameCounty = newElement('pNameCounty', '', 'p')
-      pNameCounty.textContent = country.name
+      pNameCounty.textContent = country.name.common
       rowInfoCountry.appendChild(pNameCounty)
       listInfoCountry.appendChild(rowInfoCountry)
 
@@ -100,6 +126,21 @@ function createContainersCountries(data) {
    })
 }
 
+function createOptionSelect(data) {
+   const regionsReceived = []
+   data.forEach(country => {
+      const confirmDuplicate = regionsReceived.some(
+         region => region === country.region
+      )
+      if (!confirmDuplicate) {
+         regionsReceived.push(country.region)
+         const optionSelectRegions = newElement('optionSelect', '', 'option')
+         optionSelectRegions.textContent = country.region
+         selectRegion.appendChild(optionSelectRegions)
+      }
+   })
+}
+
 function createMessageClient(data) {
    const pNotify = newElement('pNotify', '', 'p')
    pNotify.textContent = data
@@ -115,4 +156,27 @@ function viewModalLoading(view) {
    }
 }
 
-fetchCountries()
+/*--- EventListeners ---*/
+
+selectRegion.addEventListener('change', event => {
+   const region = event.target.value
+   //console.log(region)
+   if (region === 'All') {
+      fetchCountries()
+   } else {
+      fetchCountriesOfRegions(event.target.value)
+   }
+})
+
+inputSeachCountry.addEventListener('input', event => {
+   selectRegion.selectedIndex = 1
+   if (event.target.value != '') {
+      fetchSearchCountry(event.target.value)
+   } else {
+      fetchCountries()
+   }
+})
+
+window.onload = () => {
+   fetchCountries()
+}
