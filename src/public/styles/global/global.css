@@ -1,0 +1,85 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+*:focus {
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: var(--background);
+}
+
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.limit-area {
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.back-to-top {
+  background: var(--text);
+  color: var(--element);
+  font-size: 1.2rem;
+  line-height: 0;
+  padding: .5rem;
+  border-radius: 0.1rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 1;
+  visibility: hidden;
+  opacity: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-transform: translateY(100%);
+          transform: translateY(100%);
+}
+
+.back-to-top.show {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.animation-zoom {
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.animation-zoom:hover {
+  -webkit-transform: scale(105%);
+          transform: scale(105%);
+}
+
+.animation-up {
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.animation-up:hover {
+  -webkit-transform: translateY(-5%);
+          transform: translateY(-5%);
+}
+/*# sourceMappingURL=global.css.map */

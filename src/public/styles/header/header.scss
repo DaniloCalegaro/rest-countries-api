@@ -1,0 +1,44 @@
+header {
+   background: var(--element);
+   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.15);
+   padding: 0 4rem;
+   position: relative;
+   z-index: 10;
+
+   .header-elements {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.2rem 0;
+
+      h1 {
+         color: var(--text);
+         font-weight: 800;
+         font-size: 1.3rem;
+      }
+
+      div {
+         display: flex;
+         align-items: center;
+         gap: .5rem;
+         cursor: pointer;
+
+         p {
+            color: var(--text);
+            font-weight: 600;
+            font-size: .9rem;
+         }
+
+         i { 
+            color: var(--text);
+         }
+      }
+   }
+}
+
+
+@media (max-width: 420px){
+   header{
+     padding: 0 1.5rem;
+   }
+ }

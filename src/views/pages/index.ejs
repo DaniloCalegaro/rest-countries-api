@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+   <%- include('../partials/head'); %>
+   <body>
+      <%- include('../partials/header'); %>
+
+      <main>
+         <div class="limit-area">
+            <%- include('../partials/sectionFormFilter'); %>
+
+            <section class="list-countries"></section>
+         </div>
+
+         <%- include('../partials/modalWait'); %>
+
+         <a href="#home" class="back-to-top animation-up"
+            ><i class="icon-arrow-up2"></i
+         ></a>
+      </main>
+
+      <script src="/js/mainStyles.js"></script>
+      <script src="/js/apiInteraction.js"></script>
+   </body>
+</html>
