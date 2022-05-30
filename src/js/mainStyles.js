@@ -3,6 +3,11 @@
 modeDark.addEventListener('click', () => {
    const page = document.querySelector('html')
    page.classList.toggle('dark-mode')
+   if (textModeScreen.textContent === 'Dark Mode') {
+      textModeScreen.textContent = 'Light Mode'
+   } else {
+      textModeScreen.textContent = 'Dark Mode'
+   }
 })
 
 /*--- Back To Top ---*/
