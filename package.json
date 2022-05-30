@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "![GitHub repo size](https://img.shields.io/github/repo-size/DaniloCalegaro/rest-countries-api)\r ![GitHub language count](https://img.shields.io/github/languages/count/DaniloCalegaro/rest-countries-api)",
   "main": "src/server.js",
-  "scripts": {},
+  "scripts": {
+    "start": "node src/server.js"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/DaniloCalegaro/rest-countries-api.git"
@@ -16,7 +18,9 @@
   },
   "homepage": "https://github.com/DaniloCalegaro/rest-countries-api#readme",
   "dependencies": {
+    "axios": "^0.27.2",
     "ejs": "^3.1.8",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "pacth": "^0.0.1"
   }
 }
