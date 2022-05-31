@@ -6,7 +6,7 @@
 
 Aplicação criada para realizar a busca de países através do filtro por região ou por palavra digitada.
 
-o intuito da aplicação é praticar o manuseio de dados com uma API externa, juntamente com interação da DOM, as boas práticas de semântica e a responsividade da aplicação independente da tela do usuário.
+O intuito da aplicação é praticar o manuseio de dados com uma API externa, juntamente com interação da DOM, as boas práticas de semântica e a responsividade da aplicação independente da tela do usuário.
 
 
 # Tabela de conteúdos
@@ -29,7 +29,7 @@ o intuito da aplicação é praticar o manuseio de dados com uma API externa, ju
 
 Nesta foi fixado vários conhecimentos:
 
-- Interações com API externa
+- Consumo de API externa
 - Interações com a DOM
 - Estruturar o HTML, CSS e Javascript
 - Aplicado a pratica do SASS
@@ -64,6 +64,7 @@ O EJS foi escolhido e apenas o primeiro passo foi dado nesta nova branch, irei b
 - [SASS](https://sass-lang.com/) - A documentação foi impressidivel para implementar corretamento o SASS.
 - [Frontend Mentor](https://www.frontendmentor.io/challenges) - Ideia de layout e desafios.
 - [REST COUNTRIES](https://restcountries.com/) - API pública utilizada com informações de países
+- [AXIOS](https://axios-http.com/ptbr/) - Utilizado para chamadas de API
 ## Autor
 
 Linkedin - [Danilo Calegaro](https://www.linkedin.com/in/danilo-calegaro/)
